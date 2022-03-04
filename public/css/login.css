@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.heading{
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.form-container{
+    max-width: 400px;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+.form-control{
+    width: 100%;
+}
+.form-control input{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #999;
+    border-radius: 40px;
+}
+
+input[type=text]:focus, input[type=password]:focus{
+    outline: none;
+    border: 2px solid #777;
+    background-color: #eee;
+}
+
+input[type=submit]{
+    font-size: 1rem;
+    background-color: #00a8ff;
+    color: #fff;
+}

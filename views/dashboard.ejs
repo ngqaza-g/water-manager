@@ -4,51 +4,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/dashboard.css">
-    <title>Water Management Dashboard</title>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" integrity="sha512-Oy+sz5W86PK0ZIkawrG0iv7XwWhYecM3exvUtMKNJMekGFJtVAhibhRPTpmyTj8+lJCkmWfnpxKgT2OopquBHA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="container">
-        <div class="side">
-            <div class="heading">
-                <h2>Water Manager</h2>
-                <h3>Dashboard</h3>
-            </div>
-            <div class="user">
-                <div class="avater"></div>
-                <div class="name">
-                    <p>Admin</p>
-                </div>
-            </div>
-            <div class="links">
-                <ul>
-                    <li>Current Stats</li>
-                    <li>Daily Water Consumption</li>
-                    <li>Monthly Statistics</li>
-                </ul>
-            </div>
-        </div>
-        <div class="main">
-            <nav class="nav-bar">
-                <div class="burger"></div>
-                <form class="form" action="/logout" method="POST">
-                    <input type="submit" id = "logout" class="btn logout-btn" value="Logout">
-                </form>
-            </nav>
+<body class="h-100 d-flex flex-column position-relative">
 
-            <div class="main-display">
-                <div class="gauges">
-                    <div class="tank">
-                        <canvas id="tank"></canvas>
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand">
+                <span class="bi bi-droplet-fill"></span>
+                Water Management System
+            </a>
+            <button class="btn btn-danger">Logout</button>
+        </div>
+    </nav>
+    <section class="container-fluid flex-grow-1">
+        <div class="row h-100">
+            <aside class="col-md-3 sidenav d-flex flex-column bg-light text-white border-right">
+                <div class="conatiner-fluid flex-grow-1">
+
+                    <ul class="nav mt-5 flex-column">
+                        <li class="nav-item mb-2">
+                            <a href="#" class="nav-link active">Dashboard</a>
+                        </li>
+
+                        <li class="nav-item mb-2">
+                            <a href="#" class="nav-link">Daily Water Consumption</a>
+                        </li>
+
+                        <li class="nav-item mb-2">
+                            <a href="#" class="nav-link">Monthly Statistics</a>
+                        </li>
+
+                    </ul>
+
+                    <button class="btn btn-primary">Turn Off The Pump</button>
+                </div>
+            </aside>
+
+            <main class="col-md-9 py-5 h-100">
+                <div class="row">
+                    <div class="col-md-6">
+                        <canvas id="water-level" ></canvas>
                     </div>
-                    <div class="consumption-rate">
+                    <div class="col-md-6" >
                         <canvas id="rate"></canvas>
                     </div>
                 </div>
-            </div>
+                
+
+            </main>
         </div>
-    </div>
-    <script src="js/gauge.min.js"></script>
-    <script src="js/script.js"></script>
+    </section>
+
+    <footer class="position-absolute bottom-0 text-center w-100 p-3">
+        Made with Love By Tatenda Sithole &copy; 2022
+    </footer>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+      <script src="./gauge.min.js"></script>
+      <script src="./script.js"></script>
 </body>
 </html>

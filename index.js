@@ -21,10 +21,15 @@ app.use(express.static('public'));
 //This sets the cookie-parser 
 app.use(cookieParser());
 
-// 
+// Set express to use urlecnceded type of passing data
 app.use(express.urlencoded());
+// Set a route handler
 app.use('/', require('./routes/router'));
 
+// Set Not Found page
+app.use((req, res, next)=>{
+    res.status(404).send('<h1>404 Not Found</h1>');
+})
 
 // Connecting to the database 
 mongoose.connect('mongodb://localhost:27017/tatenda', {useNewUrlParser : true})

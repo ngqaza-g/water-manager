@@ -19,7 +19,7 @@ const register = (req, res, next)=>{
                             next()
                         })
                         .catch(()=>{
-                            res.status(500).json({msg: 'Server Error'})
+                            res.status(500).redirect('/register');
                         })
                 })
             }

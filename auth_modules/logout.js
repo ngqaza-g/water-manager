@@ -10,15 +10,14 @@ const logout = (req, res)=>{
                     Token.deleteOne({token: token})
                     .then(()=>{
                         res.clearCookie('token');
-                        res.render('login');
+                        res.redirect('/login');
                     })
                 }else{
-                    res.status(401).render('login');
+                    res.status(401).redirect('/login');
                 }
             })
     }else{
-        res.status(401);
-        res.render('login');
+        res.status(401).res.redirect('/login');
     }
 }
 

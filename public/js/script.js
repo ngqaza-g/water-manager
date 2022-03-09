@@ -1,5 +1,5 @@
 const tank = new RadialGauge({
-    renderTo: 'tank',
+    renderTo: 'water-level',
     width: 400,
     height: 400,
     units: 'Litres',

@@ -25,7 +25,7 @@ router.get('/dashboard', validate_token, render_page);
 // This is the register route 
 router.get('/register', validate_token, (req, res)=>{
     if(!req.login){
-        res.render('/register');
+        res.render('register');
     }else{
         res.render('dashboard');
     }

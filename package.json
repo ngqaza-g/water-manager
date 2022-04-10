@@ -1,20 +1,24 @@
 {
-  "name": "new-folder",
+  "name": "Water_Management_System",
   "version": "1.0.0",
-  "description": "",
+  "description": "Water Management System",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index",
+    "dev": "nodemon index"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "Water Management System"
+  ],
+  "author": "Tatenda Sithole",
+  "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
     "crypto": "^1.0.1",
     "ejs": "^3.1.6",
     "express": "^4.17.2",
+    "moment": "^2.29.1",
     "mongoose": "^6.2.0",
     "mqtt": "^4.3.6"
   }

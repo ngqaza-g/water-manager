@@ -2,8 +2,7 @@ const mongoose = require('mongoose');
 
 const dataSchema = mongoose.Schema({
     date : String,
-    waterLevel: Number,
-    rate: Number
+    tank: Number,
 });
 
 

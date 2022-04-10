@@ -7,6 +7,8 @@ const login = require('../auth_modules/login');
 const register = require('../auth_modules/register');
 const logout = require('../auth_modules/logout');
 const render_page = require('../auth_modules/render_page');
+const get_data = require('../modules/get_data');
+const client = require('../modules/mqtt-client');
 
 
 
@@ -21,6 +23,15 @@ router.get('/login', validate_token, render_page);
 
 // This is the route for the dashboard 
 router.get('/dashboard', validate_token, render_page);
+
+router.get('/get_data', get_data);
+
+router.get('/pump', (req, res)=>{
+    const pump = Math.floor(Math.random());
+    client.publish('pump', JSON.stringify({"pump" : pump}));
+    console.log('Published');
+})
+
 
 // This is the register route 
 router.get('/register', validate_token, (req, res)=>{

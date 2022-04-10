@@ -1,3 +1,10 @@
+const pump = document.querySelector('.pump');
+
+pump.addEventListener('click', ()=>{
+    fetch('http://localhost:7000/pump');
+});
+
+
 const tank = new RadialGauge({
     renderTo: 'water-level',
     width: 400,
@@ -68,3 +75,18 @@ const rate = new RadialGauge({
 
 tank.draw();
 rate.draw();
+
+setInterval(()=>{
+   fetch('http://localhost:7000/get_data').then(response =>{
+       if(response.status ==200 ) return response.json();
+   }       
+   ).then(data=>{
+       const { tank_value, rate_value} = data;
+       tank.value = Number(tank_value);
+    console.log(tank_value);
+       rate.value = rate_value;
+       console.log()
+   }).catch(()=>{
+       console.log('An error occured');
+   })
+}, 1000);
